@@ -1,9 +1,6 @@
 """
-The logic and methods of the dictionary are implemented here.
+The logic and methods of the wordbook are implemented here.
 """
-
-
-# TODO: Use the class type for something
 
 
 from file import *
