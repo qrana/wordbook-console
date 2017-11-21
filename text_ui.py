@@ -2,7 +2,7 @@
 The text ui is implemented here.
 """
 
-import dictionary
+import wordbook
 
 
 class UI:
