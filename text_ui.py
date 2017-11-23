@@ -2,14 +2,14 @@
 The text ui is implemented here.
 """
 
-import wordbook
+import wordbook as wb
 
 
 class UI:
     def __init__(self, location):
-        wordbook = dictionary.Wordbook(location)
+        wordbook = wb.Wordbook(location)
         if wordbook.empty():
-            raise SyntaxError
+            raise ValueError
         self.wordbook_ = wordbook
 
     def loop(self):

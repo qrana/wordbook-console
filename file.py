@@ -38,6 +38,9 @@ def read_file(filename):
     except IOError:
         print("ERROR READING FILE")
         return []
+    except IndexError:
+        print("ERROR IN THE FILE")
+        return []
     return wordbook
 
 

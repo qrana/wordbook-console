@@ -1,0 +1,2 @@
+n;päivä;;der Tag;10
+v;nukkua;;schlafen;10
