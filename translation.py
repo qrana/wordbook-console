@@ -1,10 +1,20 @@
 """
-This module defines the Translation class. It is similar to namedtuple from
-collections, but mutable.
+This module defines the Translation class.
 """
 
 
 class Translation:
+    """
+    The point of this class is to define a clear interface to access different
+    information about the translation.
+
+    This is a class for a single word and its forms and translations. It has all
+    the forward translations, meaning the direction of the default translation
+    direction as well as the actual translations in the reverse list.
+
+    This class also defines a class type and difficulty for the individual
+    translation.
+    """
     def __init__(self, forward, reverse, class_type, difficulty=10):
         self.__forward = forward
         self.__reverse = reverse

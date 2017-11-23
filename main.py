@@ -1,3 +1,7 @@
+"""
+Main file of the program
+"""
+
 import text_ui as ui
 
 FILENAME = "sources/words.txt"

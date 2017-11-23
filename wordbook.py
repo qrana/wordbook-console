@@ -8,6 +8,11 @@ import random as r
 
 
 class Wordbook:
+    """
+    This class defines the behavior of the main data structure. The indivisual
+    words are in a list as Translation objects. This keeps track of all the
+    words while the program is running.
+    """
     def __init__(self, filename):
         """
         :param filename: name of the file from which to read
@@ -47,8 +52,14 @@ class Wordbook:
 
     @staticmethod
     def print_line(forward, reverse, word_type, difficulty):
-        # print(word_type, "(" + difficulty + ")", ": ", ", ".join(reverse),
-        #     " - ", ", ".join(forward))
+        """
+        Formats a single line for printing and prints it
+        :param forward: All the forward direction translations in a list
+        :param reverse: All the reverse direction translations in a list
+        :param word_type: The type of the word, eg. noun, verb
+        :param difficulty: The difficulty as a string
+        :return: None
+        """
         print("{0:10}".format(word_type),
               "{0:15} -".format(difficulty),
               "{0:50} -".format(", ".join(forward)),
