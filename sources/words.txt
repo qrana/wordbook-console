@@ -1,2 +1,3 @@
-n;päivä;;der Tag;10
-v;nukkua;;schlafen;10
+n;päivä;;der Tag;3
+v;nukkua;;schlafen;schläft;schlief;hat geschlafen;9
+s;Talo on punainen;;Das Haus ist rot;6

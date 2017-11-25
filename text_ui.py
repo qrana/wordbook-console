@@ -20,7 +20,7 @@ class UI:
         while True:
             try:
                 print("Commands: add, fileadd, print, rprint, test, rtest, "
-                      "quit")
+                      "stest, quit")
                 input_str = input(">> ").split(" ")
                 command = input_str[0]
                 if len(input_str) > 1:
@@ -43,6 +43,8 @@ class UI:
                     self.wordbook_.test_words()
                 elif command.lower() == "rtest":
                     self.wordbook_.test_words(reverse=True)
+                elif command.lower() == "stest":
+                    self.wordbook_.test_sentences()
                 else:
                     raise SyntaxError
             except SyntaxError:

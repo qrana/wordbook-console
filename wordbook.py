@@ -74,15 +74,15 @@ class Wordbook:
         """
         if reverse:
             for translation in sorted(self.__wordbook,
-                                      key=lambda x: x.reverse[0]):
+                                      key=lambda x: x.reverse[0].lower()):
                 difficulty = self.format_difficulty(translation.difficulty)
                 word_type = self.format_word_type(translation.class_type)
-                self.print_line(translation.forward, translation.reverse,
+                self.print_line(translation.reverse, translation.forward,
                                 word_type, difficulty)
 
         else:
             for translation in sorted(self.__wordbook,
-                                      key=lambda x: x.forward[0]):
+                                      key=lambda x: x.forward[0].lower()):
                 difficulty = self.format_difficulty(translation.difficulty)
                 word_type = self.format_word_type(translation.class_type)
                 self.print_line(translation.forward, translation.reverse,
@@ -120,6 +120,49 @@ class Wordbook:
         self.__wordbook.append(translation)
         print("Word added")
 
+    @staticmethod
+    def fill_in_sentence(translation, missing_word):
+        """
+        Tests the user's knowledge of a sentence by filling a missing word
+        :param translation: the Translation object of the sentence
+        :param missing_word: the missing word
+        :return: None
+        """
+        while True:
+            guess = input("Missing word: ").lower()
+            if guess == missing_word.lower():
+                translation.decrement_difficulty()
+                print("Correct!")
+                break
+            else:
+                translation.increment_difficulty()
+                print("Try again!")
+
+    def test_sentences(self):
+        """
+        Used for testing sentences
+        :return: None
+        """
+        used_inx = []
+        sentences = []
+        for translation in self.__wordbook:
+            if translation.class_type == "s":
+                sentences.append(translation)  # only append sentences
+        for i in range(5):
+            if i >= len(sentences):
+                break
+            word_index = r.randint(0, len(sentences) - 1)
+            while word_index in used_inx:
+                word_index = r.randint(0, len(sentences) - 1)
+            used_inx.append(word_index)
+            translation = sentences[word_index]
+            sentence = translation.reverse[0].split(" ")
+            random = r.randint(0, len(sentence) - 1)
+            missing_word = sentence[random]
+            sentence[random] = " " + "_" * len(missing_word) + " "
+            print(" ".join(sentence), "(" + " ".join(translation.forward) + ")")
+            self.fill_in_sentence(translation, missing_word)
+
     def guess_words(self, translation, translations):
         """
         Word's difficulty rating is increased if the answer is incorrect and
@@ -141,9 +184,10 @@ class Wordbook:
                 if guess.lower() not in corrects:
                     print("Wrong answer!")
                     translation.increment_difficulty()
-                    print(corrects[0])
+                    print("Correct answer:", corrects[0])
                 else:
                     j += 1
+                    print("Correct!")
                     corrects.remove(guess.lower())
                     translation.decrement_difficulty()
 
@@ -153,7 +197,9 @@ class Wordbook:
         :return: None
         """
         used_inx = []
-        for i in range(3):
+        for i in range(5):
+            if i >= len(self.__wordbook):
+                break
             word_index = r.randint(0, len(self.__wordbook) - 1)
             while word_index in used_inx:
                 word_index = r.randint(0, len(self.__wordbook) - 1)
