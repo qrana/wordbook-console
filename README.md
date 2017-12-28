@@ -1,6 +1,6 @@
 This is a small  program that lets you save words to a text file and test your
-knowledge of them. The program is run by running the main file. I used python
-3.6 but should work on older versions of python 3.
+knowledge of them. The program is run by running the main file. Python 3.6 
+is used but should work on older versions of python 3.
 
 --------------------------------------------------------------------------------
 

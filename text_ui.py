@@ -6,6 +6,9 @@ import wordbook as wb
 
 
 class UI:
+    """
+    Class for the user interface
+    """
     def __init__(self, location):
         wordbook = wb.Wordbook(location)
         if wordbook.empty():

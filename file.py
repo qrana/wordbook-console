@@ -2,7 +2,7 @@
 The file input/output and file formating is handled here.
 """
 
-from translation import *
+from translation import Translation
 
 
 def read_file(filename):

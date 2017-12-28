@@ -8,6 +8,9 @@ FILENAME = "sources/words.txt"
 
 
 def main():
+    """
+    Main function that initializes the program.
+    """
     try:
         user = ui.UI(FILENAME)
         user.loop()

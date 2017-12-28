@@ -3,13 +3,14 @@ The logic and methods of the wordbook are implemented here.
 """
 
 
-from file import *
 import random as r
+from translation import Translation
+from file import read_file, format_line, write_line, clear_file
 
 
 class Wordbook:
     """
-    This class defines the behavior of the main data structure. The indivisual
+    This class defines the behavior of the main data structure. The individual
     words are in a list as Translation objects. This keeps track of all the
     words while the program is running.
     """
@@ -260,22 +261,21 @@ class Wordbook:
             return "Moderate"
         elif difficulty <= 10:
             return "Hard"
-        else:
-            return "Very hard"
+        return "Very hard"
 
     @staticmethod
     def format_word_type(word_type):
+        wtype = "Other"
         if word_type == "n":
-            return "Noun"
+            wtype = "Noun"
         elif word_type == "v":
-            return "Verb"
+            wtype = "Verb"
         elif word_type == "a":
-            return "Adjective"
+            wtype = "Adjective"
         elif word_type == "s":
-            return "Sentence"
+            wtype = "Sentence"
         elif word_type == "e":
-            return "Expression"
+            wtype = "Expression"
         elif word_type == "d":
-            return "Adverb"
-        else:
-            return "Other"
+            wtype = "Adverb"
+        return wtype
