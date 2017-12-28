@@ -1,4 +1,6 @@
 
-*.pyc
 *.xml
 *.iml
+.vscode/settings.json
+sources/words.txt
+*.pyc
