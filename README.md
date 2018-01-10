@@ -2,6 +2,8 @@ This is a small  program that lets you save words to a text file and test your
 knowledge of them. The program is run by running the main file. Python 3.6 
 is used but should work on older versions of python 3.
 
+NOTE: Development is still in progress
+
 --------------------------------------------------------------------------------
 
 A source file is intended to be used with this, as it is the place where
@@ -22,3 +24,7 @@ between 0 and 10, 10 being the default. The difficulty algorithm is still in
 development but currently decreases with correct answers and increases with
 incorrect. Future testing and printing options are coming based on word type
 and difficulty.
+
+There is also a parse.py file in the scripts folder which can be used to format
+a file whose text originates from wikibook.org. Simply run parse.py before running
+main.py.
