@@ -4,8 +4,7 @@ Main file of the program
 
 import text_ui as ui
 
-FILENAME = "sources/words.txt"
-
+FILENAME = "sources/irregular-verbs-swedish.txt"
 
 def main():
     """

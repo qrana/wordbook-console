@@ -2,8 +2,8 @@
 The file input/output and file formating is handled here.
 """
 
+import os
 from translation import Translation
-
 
 def read_file(filename):
     """
@@ -12,7 +12,9 @@ def read_file(filename):
     :return: List of Translation obbjects
     """
     try:
-        file = open(filename, 'r', encoding='utf-8')
+        path = os.getcwd()
+        filename = path + "/" + filename
+        file = open(os.path.join(os.path.expanduser('~'), filename), 'r', encoding="utf-8")
         wordbook = []
         for line in file:
             line_object = line.rstrip().split(';')
@@ -46,6 +48,8 @@ def read_file(filename):
     except IndexError:
         print("ERROR IN THE FILE")
         return []
+    if not wordbook:
+        print("INPUT FILE EMPTY")
     return wordbook
 
 
