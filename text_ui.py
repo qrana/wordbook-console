@@ -33,8 +33,8 @@ class UI:
                     print("Bye!")
                     return
                 elif command.lower() == "add":
-                    translation = self.add()
-                    self.wordbook_.add_word(translation)
+                    forw, rev, class_type = self.add()
+                    self.wordbook_.add_word(forw, rev, class_type)
                 elif command.lower() == "fileadd":
                     filename = input("Enter file name: ")
                     self.wordbook_.add_wordbook(filename)
