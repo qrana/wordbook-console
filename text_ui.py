@@ -73,7 +73,7 @@ class UI:
                 revs.append(rev.lower())
         class_type_ok = False
         class_type = "o"
-        accepted_class_types = ["n", "v", "a", "o"]
+        accepted_class_types = ["n", "v", "a", "s", "e", "d", "o"]
         while not class_type_ok:
             class_type = input("Class type: ")
             class_type = class_type.lower()
