@@ -25,7 +25,7 @@ v;flyta;flyter;flöt;flutit;;virrata;kellua;10
 v;frysa;fryser;frös;frusit;;palella;jäätyä;10
 v;få;får;fick;fått;;saada;10
 v;förstå;förstår;förstod;förstått;;ymmärtää;10
-v;försvinna; -vinner;-vinnervann;-vannvunnit;;kadota;10
+v;försvinna; -vinner;-vann;-vunnit;;kadota;10
 v;ge;ger;;antaa;10
 v;glida;glider;gled;glidit;;liukua;10
 v;glädja;gläder;gladde;glatt;;ilahduttaa;10
